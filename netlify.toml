@@ -2,3 +2,8 @@
 	command = "eleventy"
 	publish = "_site"
 	functions = "functions"
+
+[[redirect]]
+	from = "/new"
+	to = "/.netlify/functions/new"
+	status = 200
