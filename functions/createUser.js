@@ -22,7 +22,7 @@ module.exports.handler = async event => {
 		const queryResponse = await client.query(
 			q.Create(
 				q.Collection('user_info1'),
-				page
+				userInfo
 			)
 		);
 		const response = {
