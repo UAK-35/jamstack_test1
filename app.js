@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 	let photo = ''
-	let publicIdDiv = document.getElementById('publicIdDiv')
-	let publicIdValue = document.getElementById('publicIdValue')
-	let submitButton = document.getElementById('createPage')
+	let publicIdDiv = document.getElementById('publicIDdiv')
+	let publicIdValue = document.getElementById('publicIDvalue')
+	let submitButton = document.getElementById('createUser')
 	publicIdDiv.hidden = true
 	submitButton.hidden = true
 	const uploadWidget = cloudinary.createUploadWidget({

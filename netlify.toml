@@ -4,6 +4,11 @@
 	functions = "functions"
 
 [[redirect]]
-	from = "/new"
-	to = "/.netlify/functions/new"
+	from = "/newuser"
+	to = "/.netlify/functions/createUser"
 	status = 200
+
+[[redirect]]
+	from = "/userdtl/*"
+	to = "/.netlify/functions/showUser?id=:splat"
+	status = 302
