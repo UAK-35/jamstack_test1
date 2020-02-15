@@ -21,7 +21,7 @@ module.exports.handler = async event => {
 	try {
 		const queryResponse = await client.query(
 			q.Create(
-				q.Collection(''),
+				q.Collection('user_info1'),
 				page
 			)
 		);

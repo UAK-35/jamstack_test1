@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let publicIdValue = document.getElementById('publicIDvalue')
 	let submitButton = document.getElementById('createUser')
 	publicIdDiv.hidden = true
-	submitButton.disabled = true
+	//submitButton.disabled = true
 	const uploadWidget = cloudinary.createUploadWidget({
 		cloudName: 'dkc0ylnio',
 		uploadPreset: 'tvyicifd',
