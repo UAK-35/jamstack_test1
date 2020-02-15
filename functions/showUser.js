@@ -32,12 +32,4 @@ module.exports.handler = async event => {
 		}
 		return errorResponse;
 	}
-
-	try {
-		const queryResponse = await client.query(
-			q.Get()
-		);
-		
-		const response = 
-	}
 }
