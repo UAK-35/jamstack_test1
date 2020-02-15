@@ -1,0 +1,19 @@
+{
+  "name": "test5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "UAK",
+  "license": "MIT",
+  "scripts": {
+    "build": "node_modules/.bin/eleventy",
+    "dev": "node_modules/.bin/eleventy --serve --port=7071"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "faunadb": "^2.11.1",
+    "querystring": "^0.2.0",
+    "shortid": "^2.2.15"
+  }
+}
