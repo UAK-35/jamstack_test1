@@ -38,7 +38,7 @@ module.exports = data => `
     </nav>
     <header class="masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
-      <img class="masthead-avatar mb-5" src="https://res.cloudinary.com/tamas-demo/image/upload/f_auto,q_auto,w_250,h_250,c_thumb,g_face,r_max/${data.photo}" alt="${data.name}">
+      <img class="masthead-avatar mb-5" src="https://res.cloudinary.com/dkc0ylnio/image/upload/f_auto,q_auto,w_250,h_250,c_thumb,g_face,r_max/${data.photo}" alt="${data.name}">
       <h1 class="masthead-heading text-uppercase mb-0">${data.name}</h1>
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
