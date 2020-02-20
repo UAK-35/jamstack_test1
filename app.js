@@ -1,11 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-	let photo = ''
+function createUploader() {
 	let publicIdDiv = document.getElementById('publicIDdiv')
 	let publicIdValue = document.getElementById('publicIDvalue')
 	let submitButton = document.getElementById('createUser')
 	publicIdDiv.hidden = true
-	//submitButton.disabled = true
-	const uploadWidget = cloudinary.createUploadWidget({
+	submitButton.disabled = true
+	return cloudinary.createUploadWidget({
 		cloudName: 'dkc0ylnio',
 		uploadPreset: 'tvyicifd',
 		sources: ['local'],
@@ -18,13 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}, (error, result) => {
 		if (!error && result && result.event === "success") {
-			console.log('Done! Here is the image info: ', result); 
-			photo = result.info.public_id
+			console.log('Done! Here is the image info: ', result);
 			submitButton.disabled = false
 			publicIdDiv.hidden = false
-			publicIdValue.value = photo
+			publicIdValue.value = result.info.public_id
 		}
-	})
+	});
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	const uploadWidget = createUploader();
 	//document.getElementById('photo').addEventListener('click', () => uploadWidget.open())
 	document.getElementById('photo').addEventListener("click", function(){
 		    uploadWidget.open();

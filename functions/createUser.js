@@ -11,8 +11,7 @@ const client = new faunadb.Client({
 
 module.exports.handler = async event => {
 	const submittedData = querystring.parse(event.body);
-	const uniquePath = shortid.generate();
-	submittedData.path = uniquePath;
+	submittedData.path = shortid.generate();
 
 	const userInfo = {
 		data: submittedData
