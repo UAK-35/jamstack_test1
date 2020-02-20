@@ -1,7 +1,7 @@
 function createUploader() {
 	let publicIdDiv = document.getElementById('publicIDdiv')
 	let publicIdValue = document.getElementById('publicIDvalue')
-	let submitButton = document.getElementById('createUser')
+	let submitButton = document.getElementById('btnCreateUser')
 	publicIdDiv.hidden = true
 	submitButton.disabled = true
 	return cloudinary.createUploadWidget({
