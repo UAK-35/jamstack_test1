@@ -1,5 +1,6 @@
 require('dotenv').config();
 const faunadb = require('faunadb');
+const pageTemplate = require('./template.js');
 
 const q = faunadb.query;
 const client = new faunadb.Client({
@@ -19,9 +20,13 @@ module.exports.handler = async event => {
 				)
 			)
 		);
+		// const response = {
+		// 	statusCode: 200,
+		// 	body: JSON.stringify(queryResponse.data)
+		// }
 		const response = {
 			statusCode: 200,
-			body: JSON.stringify(queryResponse.data)
+			body: pageTemplate(queryResponse.data)
 		}
 		return response;
 	} catch (error) {

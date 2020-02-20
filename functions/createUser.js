@@ -11,7 +11,8 @@ const client = new faunadb.Client({
 
 module.exports.handler = async event => {
 	const submittedData = querystring.parse(event.body);
-	submittedData.path = shortid.generate();
+	const uniquePath = shortid.generate();
+	submittedData.path = uniquePath;
 
 	const userInfo = {
 		data: submittedData
@@ -25,9 +26,21 @@ module.exports.handler = async event => {
 				userInfo
 			)
 		);
+		try {
+			await axios.post('https://api.netlify.com/build_hooks/5e4ec86bb04c68a3687141f8')
+		} catch (error) {
+			console.log('Netlify build error...')
+		}
+		// const response = {
+		// 	statusCode: 200,
+		// 	body: JSON.stringify(queryResponse),
+		// }
 		const response = {
-			statusCode: 200,
-			body: JSON.stringify(queryResponse)
+			statusCode: 302,
+			body: JSON.stringify(queryResponse),
+			headers: {
+				Location: `/userdtl/${uniquePath}`
+			}
 		}
 		return response;
 	} catch (error) {
