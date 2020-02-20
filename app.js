@@ -28,7 +28,7 @@ function createUploader() {
 document.addEventListener('DOMContentLoaded', () => {
 	const uploadWidget = createUploader();
 	//document.getElementById('photo').addEventListener('click', () => uploadWidget.open())
-	document.getElementById('photo').addEventListener("click", function(){
+	document.getElementById('photoBtn').addEventListener("click", function(){
 		    uploadWidget.open();
 	}, false)
 })
