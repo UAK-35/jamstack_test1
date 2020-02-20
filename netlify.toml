@@ -3,12 +3,12 @@
 	publish = "_site"
 	functions = "functions"
 
-[[redirect]]
+[[redirects]]
 	from = "/newuser"
 	to = "/.netlify/functions/createUser"
 	status = 200
 
-[[redirect]]
+[[redirects]]
 	from = "/userdtl/*"
 	to = "/.netlify/functions/showUser?id=:splat"
 	status = 302
