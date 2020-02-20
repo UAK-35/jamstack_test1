@@ -6,18 +6,19 @@ const querystring = require('querystring');
 
 const q = faunadb.query;
 const client = new faunadb.Client({
-	sectet: process.env.FAUNADB
+	secret: process.env.FAUNADB
 });
 
 module.exports.handler = async event => {
 	const submittedData = querystring.parse(event.body);
 	const uniquePath = shortid.generate();
 	submittedData.path = uniquePath;
-	
+
 	const userInfo = {
 		data: submittedData
 	};
-	
+	console.log('form data = ' + JSON.stringify(userInfo))
+
 	try {
 		const queryResponse = await client.query(
 			q.Create(

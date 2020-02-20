@@ -3,12 +3,14 @@ const faunadb = require('faunadb');
 
 const q = faunadb.query;
 const client = new faunadb.Client({
-	sectet: process.env.FAUNADB
+	secret: process.env.FAUNADB
 });
 
 module.exports.handler = async event => {
+	console.log('path - before = ' + event.queryStringParameters.id)
 	const path = event.queryStringParameters.id.replace('/', '');
-		
+	console.log('path - after = ' + path)
+
 	try {
 		const queryResponse = await client.query(
 			q.Get(
