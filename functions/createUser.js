@@ -39,7 +39,7 @@ module.exports.handler = async event => {
 			statusCode: 302,
 			body: JSON.stringify(queryResponse),
 			headers: {
-				Location: `/userdtl/${uniquePath}`
+				Location: `/userdtl/${uniquePath}` // will try to load static page first and if not found (due to build error or longer build time) then will run showUser function which is a dynamic page
 			}
 		}
 		return response;
