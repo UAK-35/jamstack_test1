@@ -12,3 +12,10 @@
 	from = "/userdtl/*"
 	to = "/.netlify/functions/showUser?id=:splat"
 	status = 302
+
+[[redirects]]
+	from = "/*"
+	to = "/notfound.html"
+	true = false
+	status = 404
+

@@ -23,7 +23,9 @@
 <body id="page-top">
 
 	{% include 'layouts/nav.njk' %}
-	{% include 'layouts/header.njk' %}
+	{% if not noheader %}
+    {% include 'layouts/header.njk' %}
+  {% endif %}
 	{{ content | safe }}
 	{% include 'layouts/footer.njk' %}
 

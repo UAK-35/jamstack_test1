@@ -3,6 +3,7 @@ function createUploader() {
 	let publicIdValue = document.getElementById('publicIDvalue')
 	let submitButton = document.getElementById('btnCreateUser')
 	publicIdDiv.hidden = true
+	// publicIdDiv.style.display = "none";
 	submitButton.disabled = true
 	return cloudinary.createUploadWidget({
 		cloudName: 'dkc0ylnio',
@@ -20,6 +21,7 @@ function createUploader() {
 			console.log('Done! Here is the image info: ', result);
 			submitButton.disabled = false
 			publicIdDiv.hidden = false
+			// publicIdDiv.style.display = "block";
 			publicIdValue.value = result.info.public_id
 		}
 	});
