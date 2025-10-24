@@ -9,11 +9,11 @@
     "dev": "node_modules/.bin/eleventy --serve --port=7071"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
-    "faunadb": "^2.11.1",
-    "querystring": "^0.2.0",
-    "shortid": "^2.2.15"
+    "@11ty/eleventy": "^0.12.1",
+    "axios": "1.12.0",
+    "dotenv": "^17.2.3",
+    "faunadb": "^4.8.2",
+    "querystring": "^0.2.1",
+    "shortid": "^2.2.17"
   }
 }
